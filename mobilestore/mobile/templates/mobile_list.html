@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h1 class="text-center">MOBILE LIST</h1>
+
+
+               <table class="table">
+                    <tr>
+                    <th>mobile name</th>
+                        <th>color</th>
+                    <th>ram</th>
+                    <th>price</th>
+                    <th>availability</th>
+                        <th>image</th>
+                </tr>
+                <tr>
+                    {%for mobile in mobiles%}
+                    <tr>
+                        <td>{{mobile.mobile_name}}</td>
+                        <td>{{mobile.color}}</td>
+                        <td>{{mobile.ram}}</td>
+                        <td>{{mobile.price}}</td>
+                        <td>{{mobile.availability}}</td>
+                        <td><img src="{{mobile.image.url}}" alt="" width="100x" height="100px"></td>
+                        <td><a href="{%url 'removemobile' mobile.id%}" class="btn btn-danger">delete</a>
+                            <a href="{%url 'changemobile' mobile.id%}" class="btn btn-warning">edit</a>
+                            <a href="{%url 'mobiledetails' mobile.id%}" class="btn btn-dark">view</a></td>
+
+
+                    </tr>
+
+
+
+                    {%endfor%}
+                </tr>
+
+               </table>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+</body>
+</html>
