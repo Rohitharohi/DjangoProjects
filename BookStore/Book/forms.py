@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from Book.models import Book
+from Book.models import Book,Orders
 
 # class Bookform(forms.Form):
 #     book_name=forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
@@ -33,5 +33,17 @@ class Bookform(ModelForm):
             "price": forms.NumberInput(attrs={"class": "form-control"}),
             "copies": forms.NumberInput(attrs={"class": "form-control"}),
 
+
+        }
+
+class Updateform(ModelForm):
+    class Meta:
+        Model=Orders
+        field=["book_name","author","price","expected_date"]
+        widgets = {
+            "book_name": forms.TextInput(attrs={"class": "form-control"}),
+            "author": forms.TextInput(attrs={"class": "form-control"}),
+            "price": forms.NumberInput(attrs={"class": "form-control"}),
+            "expected_date": forms.NumberInput(attrs={"class": "form-control"}),
 
         }

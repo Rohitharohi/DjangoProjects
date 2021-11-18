@@ -1,5 +1,5 @@
 from django import forms
 
 
-class Converter(forms.Form):
-    number=forms.IntegerField(widget=forms.NumberInput(attrs={"class":"form-control"}))
+class Converterform(forms.Form):
+    number=forms.CharField(widget=forms.NumberInput(attrs={"class":"form-control"}))

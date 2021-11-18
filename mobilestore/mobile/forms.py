@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from mobile.models import Mobile
+from mobile.models import Mobile,Orders
 
 # class Mobileform(forms.Form):
 #     mobile_name=forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
@@ -36,3 +36,18 @@ class Mobileform(ModelForm):
             "availability": forms.NumberInput(attrs={"class": "form-control"}),
 
         }
+
+
+
+
+class Updateform(ModelForm):
+    class Meta:
+        fields=["status","expected_delivery_date"]
+        model=Orders
+
+        widgets = {
+            "status": forms.Select(attrs={"class": "form-select"}),
+            "expected_delivery_date": forms.DateInput(attrs={"type": "date"}),
+
+        }
+

@@ -25,6 +25,25 @@ class Cart(models.Model):
 
 
 
+class Orders(models.Model):
+    item=models.ForeignKey(Book,on_delete=models.CASCADE)
+    user=models.CharField(max_length=40)
+    addres=models.CharField(max_length=120)
+    date_order=models.DateField(auto_now_add=True)
+    # orderplaced,dispatch,intransit,delivered,order_cancelled
+    options=(
+        ("orderplaced","oredrplaced"),
+        ("dispatch","dispatch"),
+        ("intransit","intransit"),
+        ("delivered","delivered"),
+        ("order_cancelled","order_cancelled")
+    )
+    status=models.CharField(max_length=120,choices=options,default="orderplaced")
+    expected_delivery_date=models.DateField(null=True,blank=True)
+
+
+
+
 # 1
 
 # books=Book(book_name="oru desathine kadha",author="sk",price=700,copies=7)

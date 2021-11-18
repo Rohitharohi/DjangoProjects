@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Mobile(models.Model):
     mobile_name=models.CharField(unique=True,max_length=50)
     color=models.CharField(max_length=70)
@@ -13,8 +14,6 @@ class Mobile(models.Model):
         return self.mobile_name
 mobile=Mobile(mobile_name="realme",color="blue",ram=4,price=10000,availability=1)
 
-
-
 class Cart(models.Model):
     item=models.ForeignKey(Mobile,on_delete=models.CASCADE)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
@@ -22,6 +21,31 @@ class Cart(models.Model):
              ("cancelled","cancelled"),
              ("orderplaced","orderplaced"))
     status=models.CharField(max_length=150,choices=options,default="incart")
+
+# class Cart(models.Model):
+#     item=models.ForeignKey(Mobile,on_delete=models.CASCADE)
+#     user=models.ForeignKey(User,on_delete=models.CASCADE)
+#     options=(("incart","incart"),
+#              ("cancelled","cancelled"),
+#              ("orderplaced","orderplaced"))
+#     status=models.CharField(max_length=150,choices=options,default="incart")
+
+
+class Orders(models.Model):
+    item=models.ForeignKey(mobile,on_delete=models.CASCADE)
+    user=models.CharField(max_length=40)
+    address=models.CharField(max_length=120)
+    date_order=models.DateField(auto_now_add=True)
+    # orderplaced,dispatch,intransit,delivered,order_cancelled
+    options=(
+        ("orderplaced","oredrplaced"),
+        ("dispatch","dispatch"),
+        ("intransit","intransit"),
+        ("delivered","delivered"),
+        ("order_cancelled","order_cancelled")
+    )
+    status=models.CharField(max_length=120,choices=options,default="orderplaced")
+    expected_delivery_date=models.DateField(null=True,blank=True)
 
 # 1
 

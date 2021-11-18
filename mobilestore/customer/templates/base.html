@@ -1,113 +1,303 @@
-<!doctype html>
+<!DOCTYPE html>
 {%load static%}
 <html lang="en">
-  <head>
-  	<title>Sidebar 01</title>
+
+<head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <title>Mobilestore</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{%static 'css/styles.css'%}">
-  </head>
-  <body>
+    <!--
 
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
-		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
-	        <ul class="list-unstyled components mb-5">
-	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-	            </ul>
-	          </li>
-	          <li>
-	              <a href="#">About</a>
-	          </li>
-	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-              </ul>
-	          </li>
-	          <li>
-              <a href="#">Portfolio</a>
-	          </li>
-	          <li>
-              <a href="#">Contact</a>
-	          </li>
-	        </ul>
+    Breezed Template
 
-	        <div class="footer">
-	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-	        </div>
+    https://templatemo.com/tm-543-breezed
 
-	      </div>
-    	</nav>
+    -->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{%static 'assets/css/bootstrap.min.css'%}">
 
-        <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
+    <link rel="stylesheet" type="text/css" href="{%static 'assets/css/font-awesome.css'%}">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
+    <link rel="stylesheet" href="{%static 'assets/css/templatemo-breezed.css'%}">
 
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only">Toggle Menu</span>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+    <link rel="stylesheet" href="{%static 'assets/css/owl-carousel.css'%}">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="#" href="{%url 'signout'%}">logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
+    <link rel="stylesheet" href="{%static 'assets/css/lightbox.css'%}">
+
+</head>
+
+<body>
+
+<!-- ***** Preloader Start ***** -->
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo" style="font-family: 'Playfair Display', serif;">
+                        <em>.MobileStore</em>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{%url 'customerhome'%}" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{%url 'mycart'%}">Cart</a></li>
+                        <li class="scroll-to-section"><a href="{%url 'myorders'%}">MyOrders</a></li>
+                        <li class="scroll-to-section"><a href="{%url 'signout'%}">Logout</a></li>
+
+
+                        <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                        <div class="search-icon">
+                            <a href="#search"><i class="fa fa-search"></i></a>
+                        </div>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
             </div>
-          </div>
-        </nav>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
 
-        <h2 class="mb-4">Sidebar #01</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-		</div>
+<!-- ***** Search Area ***** -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form id="" action="#" method="get">
+        <fieldset>
+            <input type="search" name="q" placeholder="SEARCH KEYWORD(s)" aria-label="Search through site content">
+        </fieldset>
+        <fieldset>
+            <button type="submit" class="main-button">Search</button>
+        </fieldset>
+    </form>
+</div>
 
-    <script src="{%static 'js/jquery.min.js'%}"></script>
-    <script src="{%static 'js/popper.js'%}"></script>
-    <script src="{%static 'js/bootstrap.min.js'%}"></script>
-    <script src="{%static 'js/main.js'%}"></script>
-  </body>
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner header-text" id="top">
+    <div class="Modern-Slider">
+<!--        Item-->
+        <div class="item">
+            <div class="img-fill">
+                <img src="{%static 'assets/images/slide-01.jpg'%}" alt="">
+                <div class="text-content">
+                    <h1 class="text-white" style="font-family: 'Mochiy Pop P One', sans-serif;" >Welcome {{request.user}}</h1>
+<!--                    <h1 class="text-white" style="font-family: 'Playfair Display', serif;"><strong><em>WELCOME</em></strong></h1>-->
+                    <br>
+                    <h5 style="font-family: 'Mochiy Pop P One', sans-serif;"><strong><em>TO</em></strong></h5>
+                    <h5 style="font-family: 'Mochiy Pop P One', sans-serif;"><strong><em>MOBILE STORE...</em></strong></h5>
+
+                </div>
+            </div>
+        </div>
+<!--        // Item-->
+<!--        Item-->
+        <div class="item">
+            <div class="img-fill">
+                <img src="{%static 'assets/images/slide-02.jpg'%}" alt="">
+                <div class="text-content">
+
+                    <h1 class="text-white" style="font-family: 'Mochiy Pop P One', sans-serif;">MOBILES & ACCESSORIES STORE</h1><br>
+                    <h5 style="font-family: 'Mochiy Pop P One', sans-serif;">Up to 40% off</h5>
+                    <h5 style="font-family: 'Mochiy Pop P One', sans-serif;">Bestselling and Latest mobiles</h5>
+
+                    <a href="#" class="main-stroked-button">Learn More</a>
+
+                </div>
+            </div>
+        </div>
+<!--        // Item-->
+<!--        Item-->
+        <div class="item">
+            <div class="img-fill">
+                <img src="{%static 'assets/images/slide-03.jpg'%}" alt="">
+                <div class="text-content">
+                    <h5 class="text-white fas fa-percentage">NO COST EMI</h5> <br>
+
+                    <h5 class="">EXCHANGE OFFER</h5>
+                    <h5 class="">FREE SCREEN REPLACEMENT</h5>
+
+                    <a href="#" class="main-stroked-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+<!--        // Item-->
+    </div>
+</div>
+<div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+<!-- ***** Main Banner Area End ***** -->
+
+<!-- ***** About Area Starts ***** -->
+<section class="" id="about">
+    <div class="container">
+
+        <!--            <div class="col-lg-12 col-md-6 col-xs-12">-->
+        {%block body_block%}
+
+
+        {%endblock%}
+        <!--            </div>-->
+
+
+    </div>
+
+</section>
+<!-- ***** About Area Ends ***** -->
+
+
+<!-- ***** Contact Us Area Starts ***** -->
+<section class="section" id="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="left-text-content">
+                    <div class="section-heading">
+                        <h6>Contact Us</h6>
+                        <h2>Feel free to keep in touch with us!</h2>
+                    </div>
+                    <ul class="contact-info">
+                        <li><img src="{%static 'assets/images/contact-info-01.png'%}" alt="">1234567891</li>
+                        <li><img src="{%static 'assets/images/contact-info-02.png'%}" alt="">MobileWorld@company.com
+                        </li>
+                        <li><img src="{%static 'assets/images/contact-info-03.png'%}" alt="">www.mobile.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-xs-12">
+                <div class="contact-form">
+                    <form id="contact" action="" method="get">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <input name="name" type="text" id="name" placeholder="Your Name *" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <input name="phone" type="text" id="phone" placeholder="Your Phone" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <input name="email" type="email" id="email" placeholder="Your Email *" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <input name="subject" type="text" id="subject" placeholder="Subject">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6" id="message" placeholder="Message"
+                                              required=""></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-button-icon">Send Message Now <i
+                                            class="fa fa-arrow-right"></i></button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Contact Us Area Ends ***** -->
+
+<!-- ***** Footer Start ***** -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xs-12">
+                <div class="left-text-content">
+                    <p>Copyright &copy; 2020 MobileWorld Co., Ltd.
+
+                        - Design: <a rel="nofollow noopener" href="https://templatemo.com">MobileWorld</a></p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+                <div class="right-text-content">
+                    <ul class="social-icons">
+                        <li><p>Follow Us</p></li>
+                        <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-facebook"></i></a></li>
+                        <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-twitter"></i></a></li>
+                        <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- jQuery -->
+<script src="{%static 'assets/js/jquery-2.1.0.min.js'%}"></script>
+
+<!-- Bootstrap -->
+<script src="{%static 'assets/js/popper.js'%}"></script>
+<script src="{%static 'assets/js/bootstrap.min.js'%}"></script>
+
+<!-- Plugins -->
+<script src="{%static 'assets/js/owl-carousel.js'%}"></script>
+<script src="{%static 'assets/js/scrollreveal.min.js'%}"></script>
+<script src="{%static 'assets/js/waypoints.min.js'%}"></script>
+<script src="{%static 'assets/js/jquery.counterup.min.js'%}"></script>
+<script src="{%static 'assets/js/imgfix.min.js'%}"></script>
+<script src="{%static 'assets/js/slick.js'%}"></script>
+<script src="{%static 'assets/js/lightbox.js'%}"></script>
+<script src="{%static 'assets/js/isotope.js'%}"></script>
+
+<!-- Global Init -->
+<script src="{%static 'assets/js/custom.js'%}"></script>
+
+<script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+            });
+        });
+
+
+
+
+</script>
+
+</body>
 </html>
